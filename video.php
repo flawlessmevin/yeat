@@ -15,7 +15,7 @@
 </head>
 
 
-
+<?php include "parts/header.php"?>
 
 
 <body>
