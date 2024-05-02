@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,7 +17,9 @@
 </head>
 
 <?php include "parts/header.php"?>
+
 <main>
+
 
 
 	<div class="image-container">
@@ -29,6 +32,7 @@
 	<!-- BLOCK 1 -->
 	<div class="rozdel">
 		<h2>BIOGRAPHY</h2>
+
 	</div>
 	<div class="container-sm mt-5 bot-mar">
 		<div class="row justify-content-around ">

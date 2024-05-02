@@ -19,24 +19,7 @@
 
 
 <body>
-  <header class="banner">
-    <div class="logo">
-      <a href="index.php">
-        <img src="./img/yeat-twizzy gif.gif" height="40">
-      </a>
-    </div>
-    <nav class="navigation">
-      <ul>
-        <li><a href="index.php">Home</a></li>
-        <li><a href="music.php">Music</a></li>
-        <li><a href="video.php">Video</a></li>
-        <li><a href="tour.php">Tour</a></li>
-      </ul>
-      <a class="hamburger" id="hamburger">
-        <i class="fa fa-bars"></i>
-      </a>
-    </nav>
-  </header>
+
   <main>
     <div class="image-container">
       <img src="./img/yeat 1 full width.jpg" alt="Full Width Image">

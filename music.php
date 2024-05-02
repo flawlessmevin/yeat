@@ -16,24 +16,7 @@
 <?php include "parts/header.php"?>
 
 <body>
-  <header class="banner">
-    <div class="logo">
-      <a href="index.php">
-        <img src="./img/yeat-twizzy gif.gif" height="40">
-      </a>
-    </div>
-    <nav class="navigation">
-      <ul>
-        <li><a href="index.php">Home</a></li>
-        <li><a href="music.php">Music</a></li>
-        <li><a href="video.php">Video</a></li>
-        <li><a href="tour.php">Tour</a></li>
-      </ul>
-      <a class="hamburger" id="hamburger">
-        <i class="fa fa-bars"></i>
-      </a>
-    </nav>
-  </header>
+
   <main>
     <div class="image-container">
       <img src="./img/yeat 2 full width.jpg" alt="Full Width Image">
@@ -42,7 +25,7 @@
       </div>
     </div>
     <div class="rozdel">
-      <h2>Tapes</h2>
+      <h2>Albums</h2>
     </div>
     <div class="container-sm mt-5" id="albums">
       <div class="row justify-content-around custom-mb">
@@ -177,6 +160,23 @@
             tweet that his EP, Lyfë, would release preceding this album..</p>
         </div>
       </div>
+
+
+        <div class="row justify-content-around custom-mb">
+            <div class="col-md-5">
+                <iframe class="spotify-player"
+                        src="https://open.spotify.com/embed/album/1jXYc5gip5tqCTDOotfY5L?utm_source=generator" width="100%"
+                        height="352" frameBorder="0" allowfullscreen=""
+                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+            <div class="col-md-5">
+                <h2 class="big-h2 glow-text">2093</h2>
+                <h3 class="small-h3">Released February 16, 2024</h3>
+                <p class="small-p">AftërLyfe is Yeat’s third studio album, following his September 2022 extended play Lyfë.
+                    The first mention of Aftërlyfe was on June 15, 2022, when Yeat confirmed in a now deleted
+                    tweet that his EP, Lyfë, would release preceding this album..</p>
+            </div>
+        </div>
     </div>
 
 

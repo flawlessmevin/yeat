@@ -1,3 +1,4 @@
+<?php require 'db/db.php' ?>
 <header class="banner">
     <div class="logo">
         <a href="index.php">
@@ -10,6 +11,7 @@
             <li><a href="music.php">Music</a></li>
             <li><a href="video.php">Video</a></li>
             <li><a href="tour.php">Tour</a></li>
+
         </ul>
         <div class="hamburger" id="hamburger">
             <div class="bar"></div>
