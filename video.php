@@ -28,7 +28,7 @@
       </div>
     </div>
     <div class="rozdel">
-      <h2>INTERVIEWS</h2>
+      <h2>VIDEOS</h2>
     </div>
 
     <div class="container-sm mt-5" id="albums">
@@ -77,9 +77,7 @@
 
     </div>
 
-    <div class="rozdel">
-      <h2>Behind the Scenes</h2>
-    </div>
+
 
     <div class="container-sm mt-5" id="albums">
       <div class="row justify-content-around custom-mb">
