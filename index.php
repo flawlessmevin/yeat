@@ -17,14 +17,12 @@
 </head>
 
 <?php include "parts/header.php"?>
-
 <main>
-    <div class="image-container">
-		<img src="./img/yeat 3 full width.jpg" alt="Full Width Image">
-		<div class="text-overlay">
-			<p class="glow-text" style="font-size: 150px;">YEAT</p>
-		</div>
-	</div>
+<?php include "parts/banner.php"?>
+
+
+
+
 
 	<!-- BLOCK 1 -->
 	<div class="rozdel">

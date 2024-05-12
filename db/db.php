@@ -43,3 +43,8 @@ function get_info_table(){
     $info_table = $db->query("SELECT * FROM info_table");
     return $info_table;
 }
+function get_banners(){
+    global $db;
+    $banners = $db->query("SELECT * FROM banners");
+    return $banners;
+}

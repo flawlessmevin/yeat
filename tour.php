@@ -14,33 +14,9 @@
 </head>
 
 <?php include "parts/header.php"?>
-
-<body>
-<header class="banner">
-    <div class="logo">
-        <a href="index.php">
-            <img src="./img/yeat-twizzy gif.gif" height="40">
-        </a>
-    </div>
-    <nav class="navigation">
-        <ul>
-            <li><a href="index.php">Home</a></li>
-            <li><a href="music.php">Music</a></li>
-            <li><a href="video.php">Video</a></li>
-            <li><a href="tour.php">Tour</a></li>
-        </ul>
-        <a class="hamburger" id="hamburger">
-            <i class="fa fa-bars"></i>
-        </a>
-    </nav>
-</header>
 <main>
-    <div class="image-container">
-        <img src="./img/yeat 4 full width.jpg" alt="Full Width Image">
-        <div class="text-overlay">
-            <p class="glow-text" style="font-size: 150px;">CONCERTS</p>
-        </div>
-    </div>
+    <?php include "parts/banner.php"?>
+
 
 
     <div class="rozdel">
@@ -118,6 +94,6 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <script src="./js/app.js"></script>
 <script src="./js/hamb.js"></script>
-</body>
+
 
 </html>

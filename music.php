@@ -15,15 +15,12 @@
 
 <?php include "parts/header.php"?>
 
-<body>
+
+
 
   <main>
-    <div class="image-container">
-      <img src="./img/yeat 2 full width.jpg" alt="Full Width Image">
-      <div class="text-overlay">
-        <p class="glow-text" style="font-size: 150px">DISCOGRAPHY</p>
-      </div>
-    </div>
+      <?php include "parts/banner.php"?>
+
     <div class="rozdel">
       <h2>Albums</h2>
     </div>
@@ -82,6 +79,6 @@
   <script defer src="https://sdk.scdn.co/spotify-player.js"></script>
   <script src=".js/app.js"></script>
   <script src="./js/hamb.js"></script>
-</body>
+
 
 </html>

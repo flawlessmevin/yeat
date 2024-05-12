@@ -14,19 +14,14 @@
 </head>
 
 <?php include "parts/header.php"?>
-
-<body>
-
 <main>
-    <div class="image-container">
-        <img src="./img/yeat 1 full width.jpg" alt="Full Width Image">
-        <div class="text-overlay">
-            <p class="glow-text" style="font-size: 150px;">VIDEO</p>
-        </div>
-    </div>
+    <?php include "parts/banner.php"?>
+
+
     <div class="rozdel">
         <h2>VIDEOS</h2>
     </div>
+
     <div class="container-sm mt-5" id="albums">
         <?php
         $videos = get_videos();
@@ -70,6 +65,6 @@
 
 <script src="js/app.js"></script>
 <script src="./js/hamb.js"></script>
-</body>
+
 
 </html>
