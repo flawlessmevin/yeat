@@ -447,3 +447,43 @@ button {
 button:hover {
 	background-color: #45a049;
 }
+
+
+	/* CONCERTS TABLE */
+.concert-table-container {
+            font-family: Arial, sans-serif;
+            color: white;
+            margin-top: 50px;
+        }
+        .concert-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .concert-table th, .concert-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        .concert-table th {
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+        .concert-table td {
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        .concert-table .btn {
+            background-color: #555;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+        .concert-footer {
+            text-align: center;
+            margin-top: 20px;
+        }
+/* CONCERTS TABLE */

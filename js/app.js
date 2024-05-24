@@ -21,7 +21,7 @@ for (i = 0; i < acc.length; i++) {
 var idx = 0
 var slides = document.getElementsByClassName('slide')
 
-function show(n) {
+/* function show(n) {
 	slides[idx].style.display = 'none'
 	idx = (n + slides.length) % slides.length
 	slides[idx].style.display = 'block'
@@ -43,8 +43,8 @@ document.getElementById('prev').addEventListener('click', prevSlide)
 document.getElementById('next').addEventListener('click', nextSlide)
 
 show(idx)
-startAutoSlide()
-/*SLIDER END*/
+startAutoSlide() */
+/*SLIDER END
 
 /*FORMULAR with alert*/
 function validateForm() {
@@ -58,3 +58,7 @@ function validateForm() {
 
 	return true
 }
+
+
+
+

@@ -1,18 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Music</title>
-    <link rel="icon" href="./img/yeat icon.png" type="image/x-icon">
-    <link rel="shortcut icon" href="./img/yeat icon.png " type="image/x-icon">
-
-    <link rel="stylesheet" href="./css/style.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
-</head>
-
 <?php include "parts/header.php"?>
 <main>
     <?php include "parts/banner.php"?>
@@ -22,44 +7,46 @@
     <div class="rozdel">
         <h2>LIVE PERFOMANCES</h2>
     </div>
+    <div class="container-sm mt-5" id="albums">
+        <div class="concert-table-container">
+            <table class="concert-table">
+                <tr>
+                    <th>DATE</th>
+                    <th>VENUE</th>
+                    <th>CITY</th>
+                    <th>TICKETS / RSVP</th>
+                 </tr>
+                 <?php
+                 $concerts = get_concerts();
+                 foreach ($concerts as $concert){?>
+                <tr>
+                    <td><p class="glow-text"><?php echo $concert["date"]?></p></td>
+                    <td><p class="glow-text"> <?php echo $concert["venue"]?><br><small><?php echo $concert["info"]?></small></p></td>
+                    <td><p class="glow-text" ><?php echo $concert["city"]?></p></td>
+                    <td>
+                        <a href="<?php echo htmlspecialchars($concert["tickets"]); ?>" class="btn" target="_blank">BUY</a>
+                        <a href="<?php echo htmlspecialchars($concert["rsvp"]); ?>" class="btn" target="_blank">RSVP</a>
+                    </td>
+                </tr>
+                <?php }; ?>
 
-
-
-    <section class="slides-container">
-        <div class="slide fade">
-            <img src="./img/yeat4.jpeg" style="max-width: 1500px; max-height: 1000px;">
-            <div class="slide-text">
-                New York
+            </table>
+            <div class="concert-footer">
+                <button class="btn">Sign Up To Get Notified</button>
             </div>
         </div>
-        <div class="slide fade">
-            <img src="./img/live yeat2.jpg" style="max-width: 1500px; max-height: 1000px;">
-            <div class="slide-text">
-                California
-            </div>
-        </div>
-        <div class="slide fade">
-            <img src="./img/live yeat3.jpg">
-            <div class="slide-text">
-                London
-            </div>
-        </div>
-        <a id="prev" class="prev">❮</a>
-        <a id="next" class="next">❯</a>
-    </section>
-
-
+    </div>
 
     <div class="container-sm mt-5" id="albums">
         <div class="row justify-content-around custom-mb">
             <div class="col-md-5">
                 <h2 class="big-h2 glow-text">
-                    There are no events in the near future. Sign up to receive information.
+                    Write to us if you have questions or suggestions.
                 </h2>
 
             </div>
-            <div class="col-md-5">
-                <form id="contactForm" onsubmit="return validateForm()">
+            <div class="col-md-4">
+                <form id="contactForm" action="process_form.php" method="post" onsubmit="return validateForm()">
                     <label for="name">Name:</label>
                     <input type="text" id="name" name="name" required>
 
@@ -74,10 +61,13 @@
                         I consent to the processing of personal data.
                     </label>
 
-                    <button type="submit"><a href="https://en.wikipedia.org/wiki/Yeat"></a>Send</button>
+                    <button type="submit">Send</button>
                 </form>
-
+                <div id="notification"></div>
             </div>
+
+
+        </div>
         </div>
 
 
@@ -89,11 +79,6 @@
 <?php include "parts/footer.php"?>
 
 
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<script src="./js/app.js"></script>
-<script src="./js/hamb.js"></script>
 
 
-</html>
+

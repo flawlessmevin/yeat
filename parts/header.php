@@ -1,4 +1,8 @@
 <?php require 'db/db.php' ?>
+<?php include 'functions/functions.php'?>
+
+<?php add_stylesheets()?>
+
 <header class="banner">
     <div class="logo">
         <a href="index.php">
@@ -21,3 +25,4 @@
     </nav>
     <div class="overlay" id="overlay"></div>
 </header>
+

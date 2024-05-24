@@ -53,3 +53,7 @@
     </div>
 </footer>
 
+
+<?php add_scripts();?>
+
+</html>
