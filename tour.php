@@ -1,9 +1,9 @@
 <?php include "parts/header.php"?>
 <main>
-    <?php include "parts/banner.php"?>
 
 
 
+    <?php $concert = new Concert()?>
     <div class="rozdel">
         <h2>LIVE PERFOMANCES</h2>
     </div>
@@ -15,21 +15,11 @@
                     <th>VENUE</th>
                     <th>CITY</th>
                     <th>TICKETS / RSVP</th>
-                 </tr>
-                 <?php
-                 $concerts = get_concerts();
-                 foreach ($concerts as $concert){?>
-                <tr>
-                    <td><p class="glow-text"><?php echo $concert["date"]?></p></td>
-                    <td><p class="glow-text"> <?php echo $concert["venue"]?><br><small><?php echo $concert["info"]?></small></p></td>
-                    <td><p class="glow-text" ><?php echo $concert["city"]?></p></td>
-                    <td>
-                        <a href="<?php echo htmlspecialchars($concert["tickets"]); ?>" class="btn" target="_blank">BUY</a>
-                        <a href="<?php echo htmlspecialchars($concert["rsvp"]); ?>" class="btn" target="_blank">RSVP</a>
-                    </td>
                 </tr>
-                <?php }; ?>
-
+                <?php
+                    $concerts = $concert->get_concerts();
+                    $concert->generate_concerts($concerts);
+                ?>
             </table>
             <div class="concert-footer">
                 <button class="btn">Sign Up To Get Notified</button>

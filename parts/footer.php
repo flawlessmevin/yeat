@@ -54,6 +54,10 @@
 </footer>
 
 
-<?php add_scripts();?>
+<?php
+$page_name = basename($_SERVER["SCRIPT_NAME"],'.php');
+$page_object = new Page($page_name);
+$page_object->add_scripts();
+?>
 
 </html>

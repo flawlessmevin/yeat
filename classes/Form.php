@@ -1,7 +1,12 @@
 <?php
-include __DIR__ . '/../db/db.php';
+class Form extends Database {
+    public function __construct() {
+        parent::__construct();
+    }
+    public function generate_form(){
 
-class Form {
+
+    }
     public function saveMessage($name, $email, $message, $date) {
         global $db;
 

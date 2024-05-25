@@ -1,6 +1,7 @@
 <?php
 include 'classes/Form.php';
 
+
 $form = new Form();
 
 // GETTING DATA FROM FORM

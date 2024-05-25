@@ -1,4 +1,4 @@
 <?php
-require('functions/functions.php');
-redirect_homepage();
+    require('functions/functions.php');
+    redirect_homepage();
 ?>

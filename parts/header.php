@@ -1,7 +1,19 @@
-<?php require 'db/db.php' ?>
-<?php include 'functions/functions.php'?>
+<?php
+require_once "functions/functions.php";
+?>
 
-<?php add_stylesheets()?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><?php echo 'Moj web | ' . basename($_SERVER["SCRIPT_NAME"], '.php');?></title>
+    <?php
+    $page_name = basename($_SERVER["SCRIPT_NAME"],'.php');
+    $page_object = new Page($page_name);
+    $page_object->add_stylesheets();
+    ?>
+</head>
 
 <header class="banner">
     <div class="logo">

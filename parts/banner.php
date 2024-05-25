@@ -1,10 +1,12 @@
 <?php
+require_once ('functions/functions.php');
 $page = basename($_SERVER['PHP_SELF']);
 
-
+// Создаем экземпляр класса Database
+$database = new Page();
 
 // Запрос к базе данных для получения данных о баннере текущей страницы
-$stmt = $db->prepare("SELECT * FROM banners WHERE page_name = ?");
+$stmt = $database->getDb()->prepare("SELECT * FROM banners WHERE page_name = ?");
 $stmt->execute([$page]);
 $banner = $stmt->fetch(PDO::FETCH_ASSOC);
 
