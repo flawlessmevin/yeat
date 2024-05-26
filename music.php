@@ -1,6 +1,8 @@
 <?php include "parts/header.php"; ?>
 
 <main>
+
+    <?php include 'parts/banner.php'?>
     <?php $music = new Music();?>
     <div class="rozdel">
         <h2>Albums</h2>

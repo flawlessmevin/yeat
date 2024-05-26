@@ -2,6 +2,8 @@
 
 
 <main>
+
+    <?php include 'parts/banner.php'?>
     <?php $content = new Content(); ?>
     <div class="rozdel">
         <h2>BIOGRAPHY</h2>

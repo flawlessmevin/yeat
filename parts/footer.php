@@ -38,10 +38,10 @@
             <div class="navigation-container col-md-4" style="text-align: center;">
                 <h3 style="color: white; margin-bottom: 20px;">Navigation</h3>
                 <div class="contact-details">
-                    <p><a href="index.php">Home</a></p>
-                    <p><a href="./music.html">Music</a></p>
-                    <p><a href="./video.html">Video</a></p>
-                    <p><a href="./tour.html">Tour</a></p>
+                    <p><a href="home.php">Home</a></p>
+                    <p><a href="./music.php">Music</a></p>
+                    <p><a href="./video.php">Video</a></p>
+                    <p><a href="./tour.php">Tour</a></p>
                 </div>
             </div>
         </div>

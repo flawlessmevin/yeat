@@ -1,5 +1,5 @@
 <?php
-include 'classes/Form.php';
+include 'config.php';
 
 
 $form = new Form();

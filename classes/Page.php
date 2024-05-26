@@ -1,7 +1,8 @@
 <?php
 
 
-class Page{
+class Page
+{
 
     private $page_name;
 
@@ -10,7 +11,20 @@ class Page{
         $this->page_name = $page_name;
     }
 
-    public function add_stylesheets(){
+    public function get_page_title()
+    {
+        $titles = [
+            'home' => 'Home',
+            'music' => 'Music',
+            'video' => 'Video',
+            'tour' => 'Tour',
+            'default' => 'Yeat'
+        ];
+        return isset($titles[$this->page_name]) ? $titles[$this->page_name] : $titles['default'];
+    }
+
+    public function add_stylesheets()
+    {
         echo '<link rel="icon" href="./img/yeat icon.png" type="image/x-icon">';
         echo '<link rel="shortcut icon" href="./img/yeat icon.png" type="image/x-icon">';
 
@@ -19,17 +33,19 @@ class Page{
         echo '<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">';
     }
 
-    function redirect_homepage(){
+    function redirect_homepage()
+    {
         header("Location:home.php");
         exit();
     }
 
-    public function add_scripts(){
+    public function add_scripts()
+    {
         echo '<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>';
         echo '<script src="./js/app.js"></script>';
         echo '<script src="./js/hamp.js"></script>';
 
-        switch($this->page_name){
+        switch ($this->page_name) {
             case 'home':
                 echo '<script src="../assets/js/slider.js"></script>';
                 break;
@@ -43,18 +59,6 @@ class Page{
                 break;
         }
     }
-
-
-
-
-
-
-public function get_banners(){
-    global $db;
-    $banners = $db->query("SELECT * FROM banners");
-    return $banners;
-}
-
 
 }
 ?>
