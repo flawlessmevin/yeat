@@ -12,12 +12,14 @@ class User extends Database{
             $query_run = $this->db->prepare($sql);
             $query_run->execute([':user_name' => $username]);
             $user = $query_run->fetch(PDO::FETCH_ASSOC);
+
             if ($user) {
-                error_log("User found: " . json_encode($user)); // Отладочная информация
+
                 if (password_verify($password, $user['password'])) {
                     // login successful
                     $_SESSION['logged_in'] = true;
-                    $_SESSION['is_admin'] = $user['role'];
+                    // Проверяем роль пользователя, чтобы установить, является ли он администратором
+                    $_SESSION['is_admin'] = $user['role'] == 1;
                     return true;
                 } else {
                     error_log("Password verification failed for user: " . $username); // Отладочная информация

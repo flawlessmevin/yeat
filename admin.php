@@ -6,13 +6,10 @@ if(!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] != true){
 }?>
 <main>
     <?php include 'parts/banner.php' ?>
-    <div class="container">
-        <div class="row">
-            <div class="col text-center mt-5">
-                <a href="admin_tour.php" class="btn btn-primary">Edit Concerts</a>
-            </div>
-        </div>
+    <div class="rozdel">
+        <h2><a href="admin_tour.php" class="button_link">Edit Concerts</a></h2>
     </div>
+
 </main>
 
 
