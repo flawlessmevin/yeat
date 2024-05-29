@@ -1,49 +1,58 @@
 <?php
+class User extends Database{
 
-class User extends Database {
-    protected $db;
-
-    public function __construct($db) {
-        parent::__construct(); // Вызов конструктора родительского класса Database
-        $this->db = $db;
+    public function __construct()
+    {
+        parent::__construct();
     }
 
-    // Register a new user with hashed password
-    public function register($nickname, $email, $password) {
-        try {
-            $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-            $stmt = $this->db->prepare("INSERT INTO users (nickname, email, password) VALUES (:nickname, :email, :password)");
-            $stmt->bindParam(':nickname', $nickname);
-            $stmt->bindParam(':email', $email);
-            $stmt->bindParam(':password', $hashedPassword);
-
-            if ($stmt->execute()) {
-                return "User registered successfully!";
+    public function login($username, $password){
+        try{
+            $sql = "SELECT * FROM users WHERE email = :user_name OR nickname = :user_name";
+            $query_run = $this->db->prepare($sql);
+            $query_run->execute([':user_name' => $username]);
+            $user = $query_run->fetch(PDO::FETCH_ASSOC);
+            if ($user) {
+                error_log("User found: " . json_encode($user)); // Отладочная информация
+                if (password_verify($password, $user['password'])) {
+                    // login successful
+                    $_SESSION['logged_in'] = true;
+                    $_SESSION['is_admin'] = $user['role'];
+                    return true;
+                } else {
+                    error_log("Password verification failed for user: " . $username); // Отладочная информация
+                }
             } else {
-                return "Error: " . $stmt->errorInfo()[2];
+                error_log("No user found for: " . $username); // Отладочная информация
             }
-        } catch (PDOException $e) {
-            return "Error: " . $e->getMessage();
+            return false;
+        } catch(PDOException $e){
+            echo $e->getMessage();
+            return false;
         }
     }
 
-    // User login
-    public function login($email, $password) {
+    public function register($email, $password, $nickname) {
         try {
-            $stmt = $this->db->prepare("SELECT * FROM users WHERE email = :email");
-            $stmt->bindParam(':email', $email);
-            $stmt->execute();
-
-            $user = $stmt->fetch(PDO::FETCH_ASSOC);
-            if ($user && password_verify($password, $user['password'])) {
-                return "Login successful!";
-            } else {
-                return "Invalid email or password.";
-            }
-        } catch (PDOException $e) {
-            return "Error: " . $e->getMessage();
+            $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+            error_log("Hashed password: " . $hashed_password);
+            $reg_date = date('Y-m-d H:i:s');
+            $sql = "INSERT INTO users (email, password, role, nickname, reg_date) VALUES (:user_email, :user_password, :user_role, :user_nickname, :user_date_reg)";
+            $query_run = $this->db->prepare($sql);
+            $query_run->execute([
+                ':user_email' => $email,
+                ':user_password' => $hashed_password,
+                ':user_role' => '0',
+                ':user_nickname' => $nickname,
+                ':user_date_reg' => $reg_date
+            ]);
+            return true;
+        } catch(PDOException $e) {
+            echo "Error during registration: " . $e->getMessage();
+            return false;
         }
     }
+
 }
 
 ?>

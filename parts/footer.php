@@ -42,6 +42,7 @@
                     <p><a href="./music.php">Music</a></p>
                     <p><a href="./video.php">Video</a></p>
                     <p><a href="./tour.php">Tour</a></p>
+
                 </div>
             </div>
         </div>

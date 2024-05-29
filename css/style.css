@@ -325,6 +325,7 @@ td {
 	color: white;
 	font-style: normal;
 	font-weight: bold;
+
 }
 .small-h3 {
 	font-size: 18px;
@@ -420,11 +421,15 @@ form {
 	max-width: 400px;
 	width: 100%;
 	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	align-items: center; /* Центровка содержимого по горизонтали */
 }
 
 label {
 	display: block;
 	margin-bottom: 8px;
+	width: 100%; /* Обеспечивает, что метки занимают всю ширину контейнера */
 }
 
 input,
@@ -442,11 +447,32 @@ button {
 	border: none;
 	border-radius: 4px;
 	cursor: pointer;
+	width: 100px; /* Устанавливаем фиксированную ширину кнопки */
+	margin-top: 10px;
+	text-align: center;
 }
 
 button:hover {
 	background-color: #45a049;
 }
+
+.button_link {
+	background-color: #4caf50;
+	color: #fff;
+	padding: 10px;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	width: 100px; /* Устанавливаем фиксированную ширину кнопки */
+	margin-top: 10px;
+	text-align: center;
+	text-decoration: none;
+}
+
+.button_link:hover {
+	background-color: #45a049;
+}
+
 
 
 	/* CONCERTS TABLE */

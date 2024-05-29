@@ -1,5 +1,5 @@
 <?php
-require_once "functions/functions.php";
+require "functions/functions.php";
 ?>
 
 <!DOCTYPE html>
@@ -23,10 +23,15 @@ require_once "functions/functions.php";
     </div>
     <nav class="navigation">
         <ul>
-            <li><a href="home.php">Home</a></li>
-            <li><a href="music.php">Music</a></li>
-            <li><a href="video.php">Video</a></li>
-            <li><a href="tour.php">Tour</a></li>
+            <li><a href="home.php">HOME</a></li>
+            <li><a href="music.php">MUSIC</a></li>
+            <li><a href="video.php">VIDEO</a></li>
+            <li><a href="tour.php">TOUR</a></li>
+            <?php if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true): ?>
+                <li><a href="logout.php">LOGOUT</a></li>
+            <?php else: ?>
+                <li><a href="login.php">LOGIN</a></li>
+            <?php endif; ?>
         </ul>
         <div class="hamburger" id="hamburger">
             <div class="bar"></div>
@@ -34,5 +39,7 @@ require_once "functions/functions.php";
             <div class="bar"></div>
         </div>
     </nav>
+
+
     <div class="overlay" id="overlay"></div>
 </header>

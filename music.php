@@ -2,7 +2,7 @@
 
 <main>
 
-    <?php include 'parts/banner.php'?>
+    <?php include 'parts/banner.php' ?>
     <?php $music = new Music();?>
     <div class="rozdel">
         <h2>Albums</h2>
@@ -21,4 +21,4 @@
 </main>
 
 
-<?php include "parts/footer.php"?>
+<?php include "parts/footer.php" ?>

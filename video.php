@@ -3,7 +3,7 @@ include "parts/header.php";
 ?>
 
 <main>
-    <?php include 'parts/banner.php'?>
+    <?php include 'parts/banner.php' ?>
     <?php $video = new Video();?>
     <div class="rozdel">
         <h2>VIDEOS</h2>

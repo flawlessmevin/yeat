@@ -1,6 +1,6 @@
-<?php include "parts/header.php"?>
+<?php include "parts/header.php" ?>
 <main>
-    <?php include 'parts/banner.php'?>
+    <?php include 'parts/banner.php' ?>
 
     <?php $concert = new Concert()?>
     <div class="rozdel">
@@ -21,12 +21,12 @@
                 ?>
             </table>
             <div class="concert-footer">
-                <button class="big-h1">Sign Up To Get Notified</button>
+                <a href="login.php" class="button_link">Sign Up</a>
             </div>
         </div>
     </div>
 
-    
+
 
     <div class="container-sm mt-5" id="albums">
         <div class="row justify-content-around custom-mb">
@@ -44,4 +44,4 @@
         </div>
     </div>
 </main>
-<?php include "parts/footer.php"?>
+<?php include "parts/footer.php" ?>
