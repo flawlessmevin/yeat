@@ -1,11 +1,14 @@
 
 <?php
-include "parts/header.php";
+
+
+include 'parts/header.php';
+
 
 // Проверяем, есть ли переданный идентификатор концерта
 if (!isset($_GET['id'])) {
     // Если нет, перенаправляем обратно на страницу с концертами
-    header('Location: admin-tour.php');
+    header('Location: admin_tour.php');
     exit;
 }
 
@@ -19,7 +22,7 @@ $concert_data = $concert->get_concert_by_id($concert_id);
 // Проверяем, найден ли концерт с указанным идентификатором
 if (!$concert_data) {
     // Если не найден, перенаправляем обратно на страницу с концертами
-    header('Location: admin-tour.php');
+    header('Location: admin_tour.php');
     exit;
 }
 
@@ -82,5 +85,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </div>
 </main>
 
-<?php include "parts/footer.php"; ?>
+<?php include 'parts/footer.php';
 

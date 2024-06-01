@@ -1,10 +1,8 @@
 <?php
-
-
-
 class Banner extends Database
 {
-    public function __construct() {
+    public function __construct()
+    {
         parent::__construct();
     }
 
@@ -29,7 +27,7 @@ class Banner extends Database
             // Если баннер не найден, выводим сообщение об ошибке
             ?>
             <div class="image-container">
-                <img src="./img/banner_error.png" alt="Alternate Banner Image">
+                <img src="../assets/img/banner_error.png" alt="Alternate Banner Image">
                 <div class="text-overlay">
                     <p class="glow-text" style="font-size: 50px;">BANNER NOT FOUND FOR THIS PAGE</p>
                 </div>
@@ -38,4 +36,5 @@ class Banner extends Database
         }
     }
 }
+
 ?>

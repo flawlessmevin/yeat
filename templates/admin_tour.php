@@ -1,4 +1,10 @@
-<?php include "parts/header.php";?>
+<?php
+
+include 'parts/header.php';
+
+
+?>
+
 <main>
     <div class="rozdel">
         <h2>ADMIN CONCERTS EDIT</h2>

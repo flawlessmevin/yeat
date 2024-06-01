@@ -1,9 +1,12 @@
 <?php
-class Form extends Database {
-    public function __construct() {
+class Form extends Database{
+    public function __construct()
+    {
         parent::__construct();
     }
-    public function generate_form(){
+
+    public function generate_form()
+    {
         ?>
         <form id="contactForm" action="thankyou.php" method="post" onsubmit="return validateForm()">
             <label for="name">Name:</label>
@@ -25,7 +28,9 @@ class Form extends Database {
         <div id="notification"></div>
         <?php
     }
-    public function insert() {
+
+    public function insert()
+    {
         if ($this->db) {
             if (isset($_POST['contact_submitted'])) {
                 $data = array(
@@ -49,7 +54,8 @@ class Form extends Database {
         }
     }
 
-    public function select() {
+    public function select()
+    {
         try {
             $sql = "SELECT * FROM messages";
             $query = $this->db->query($sql);
@@ -60,7 +66,8 @@ class Form extends Database {
         }
     }
 
-    public function delete() {
+    public function delete()
+    {
         try {
             $data = array(
                 'message_id' => $_POST['delete_message']
@@ -73,7 +80,8 @@ class Form extends Database {
         }
     }
 
-    public function select_single($message_id) {
+    public function select_single($message_id)
+    {
         try {
             $data = array('message_id' => $message_id);
             $query = "SELECT * FROM messages WHERE message_id = :message_id";
@@ -86,7 +94,8 @@ class Form extends Database {
         }
     }
 
-    public function edit($message_id, $new_data) {
+    public function edit($message_id, $new_data)
+    {
         try {
             // Assemble data for update
             $data = array(
@@ -105,4 +114,5 @@ class Form extends Database {
         }
     }
 }
+
 ?>

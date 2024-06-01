@@ -1,5 +1,9 @@
 <?php
+
+
+
 include "parts/header.php";
+
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Получаем данные из формы

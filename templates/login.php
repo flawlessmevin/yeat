@@ -1,4 +1,7 @@
 <?php
+
+
+
 include('parts/header.php');
 if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true){
     if($_SESSION['is_admin'] == true) {

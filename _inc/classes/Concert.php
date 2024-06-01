@@ -1,14 +1,20 @@
 <?php
-class Concert extends Database{
+class Concert extends Database
+{
 
-    public function __construct() {
+    public function __construct()
+    {
         parent::__construct();
     }
-    function get_concerts(){
+
+    function get_concerts()
+    {
         $query = $this->db->query("SELECT * FROM concerts");
         return $query->fetchAll(PDO::FETCH_ASSOC);
     }
-    public function generate_concerts($concerts) {
+
+    public function generate_concerts($concerts)
+    {
         foreach ($concerts as $concert) {
             echo '<tr>
                     <td><p class="glow-text">' . htmlspecialchars($concert["date"]) . '</p></td>
@@ -21,8 +27,10 @@ class Concert extends Database{
                   </tr>';
         }
     }
+
     // CRUD
-    public function get_concert_by_id($concert_id) {
+    public function get_concert_by_id($concert_id)
+    {
         try {
             $sql = "SELECT * FROM concerts WHERE concert_id = :id";
             $query = $this->db->prepare($sql);
@@ -34,7 +42,9 @@ class Concert extends Database{
             return false;
         }
     }
-    public function create_concert($date, $venue, $city, $info, $tickets, $rsvp) {
+
+    public function create_concert($date, $venue, $city, $info, $tickets, $rsvp)
+    {
         try {
             $sql = "INSERT INTO concerts (date, venue, city, info, tickets, rsvp) 
                     VALUES (:date, :venue, :city, :info, :tickets, :rsvp)";
@@ -48,20 +58,22 @@ class Concert extends Database{
                 ':rsvp' => $rsvp
             ]);
             return true;
-        } catch(PDOException $e) {
+        } catch (PDOException $e) {
             echo "Error creating concert: " . $e->getMessage();
             return false;
         }
     }
 
     // Получение данных о всех концертах
-    function select_concerts() {
+    function select_concerts()
+    {
         $query = $this->db->query("SELECT * FROM concerts");
         return $query->fetchAll(PDO::FETCH_ASSOC);
     }
 
     // Обновление данных концерта
-    public function update_concert($concert_id, $new_data) {
+    public function update_concert($concert_id, $new_data)
+    {
         try {
             $sql = "UPDATE concerts SET date = :date, venue = :venue, city = :city, info = :info, tickets = :tickets, rsvp = :rsvp WHERE concert_id = :id";
             $query = $this->db->prepare($sql);
@@ -82,13 +94,14 @@ class Concert extends Database{
     }
 
     // Удаление концерта
-    public function delete_concert($id) {
+    public function delete_concert($id)
+    {
         try {
             $sql = "DELETE FROM concerts WHERE concert_id = :id";
             $query = $this->db->prepare($sql);
             $query->execute([':id' => $id]);
             return true;
-        } catch(PDOException $e) {
+        } catch (PDOException $e) {
             echo "Error deleting concert: " . $e->getMessage();
             return false;
         }

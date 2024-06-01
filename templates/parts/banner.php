@@ -1,5 +1,8 @@
 <?php
-require_once "functions/functions.php";
+
+
+
+require_once "../_inc/functions.php";
 ?>
 <?php
 // Получаем имя текущей страницы

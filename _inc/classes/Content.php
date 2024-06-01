@@ -1,15 +1,19 @@
 <?php
-class Content extends Database {
-    public function __construct() {
+class Content extends Database
+{
+    public function __construct()
+    {
         parent::__construct();
     }
 
-    public function get_biography() {
+    public function get_biography()
+    {
         $query = $this->db->query("SELECT * FROM biography");
         return $query->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public function generate_biography($biography) {
+    public function generate_biography($biography)
+    {
         foreach ($biography as $bio) {
             echo '<h3 class="text-center big-h2">' . htmlspecialchars($bio["title"]) . '</h3>';
             echo '<p class="bio">' . htmlspecialchars($bio["text"]) . '</p>';
@@ -17,12 +21,14 @@ class Content extends Database {
         }
     }
 
-    public function get_info_table() {
+    public function get_info_table()
+    {
         $query = $this->db->query("SELECT * FROM info_table");
         return $query->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public function generate_info_table($info_table) {
+    public function generate_info_table($info_table)
+    {
         echo '<table>';
         foreach ($info_table as $info) {
             echo '<tr>';
@@ -33,12 +39,14 @@ class Content extends Database {
         echo '</table>';
     }
 
-    public function get_career() {
+    public function get_career()
+    {
         $query = $this->db->query("SELECT * FROM career");
         return $query->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public function generate_career($career) {
+    public function generate_career($career)
+    {
         foreach ($career as $era) {
             echo '<div class="row justify-content-center custom-mb">';
             echo '<div class="col-md-4">';
@@ -56,12 +64,14 @@ class Content extends Database {
         }
     }
 
-    public function get_music_styles() {
+    public function get_music_styles()
+    {
         $query = $this->db->query("SELECT * FROM music_style");
         return $query->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public function generate_music_styles($music_styles) {
+    public function generate_music_styles($music_styles)
+    {
         foreach ($music_styles as $style) {
             echo '<div class="col-md-5">';
             echo '<p class="bio">' . htmlspecialchars($style["text"]) . '</p>';
@@ -69,4 +79,5 @@ class Content extends Database {
         }
     }
 }
+
 ?>

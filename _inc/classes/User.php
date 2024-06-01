@@ -6,8 +6,9 @@ class User extends Database{
         parent::__construct();
     }
 
-    public function login($username, $password){
-        try{
+    public function login($username, $password)
+    {
+        try {
             $sql = "SELECT * FROM users WHERE email = :user_name OR nickname = :user_name";
             $query_run = $this->db->prepare($sql);
             $query_run->execute([':user_name' => $username]);
@@ -28,13 +29,14 @@ class User extends Database{
                 error_log("No user found for: " . $username); // Отладочная информация
             }
             return false;
-        } catch(PDOException $e){
+        } catch (PDOException $e) {
             echo $e->getMessage();
             return false;
         }
     }
 
-    public function register($email, $password, $nickname) {
+    public function register($email, $password, $nickname)
+    {
         try {
             $hashed_password = password_hash($password, PASSWORD_DEFAULT);
             error_log("Hashed password: " . $hashed_password);
@@ -49,7 +51,7 @@ class User extends Database{
                 ':user_date_reg' => $reg_date
             ]);
             return true;
-        } catch(PDOException $e) {
+        } catch (PDOException $e) {
             echo "Error during registration: " . $e->getMessage();
             return false;
         }

@@ -1,14 +1,18 @@
 <?php
-class Video extends Database {
-    public function __construct() {
+class Video extends Database{
+    public function __construct()
+    {
         parent::__construct();
     }
-    public function get_videos() {
+
+    public function get_videos()
+    {
         $query = $this->db->query("SELECT * FROM videos");
         return $query->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public function generate_videos($videos) {
+    public function generate_videos($videos)
+    {
         foreach ($videos as $video) {
             echo '<div class="row justify-content-around custom-mb">';
             switch ($video["video_id"] % 2) {
@@ -37,4 +41,5 @@ class Video extends Database {
         }
     }
 }
+
 ?>

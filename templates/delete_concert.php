@@ -1,5 +1,8 @@
 <?php
-include "parts/header.php";
+
+
+include 'parts/header.php';
+
 if(isset($_GET['id'])) {
     // Получаем идентификатор концерта из GET-запроса
     $concert_id = $_GET['id'];
@@ -24,4 +27,4 @@ if(isset($_GET['id'])) {
     echo "Error: Concert ID not provided.";
 }
 
-include "parts/footer.php" ?>
+

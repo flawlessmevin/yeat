@@ -7,18 +7,18 @@
                 <div class="icon mb-3">
 
                     <a href="https://www.instagram.com/yeat/" target="_blank">
-                        <img src="./img/instagram.png" alt="Instagram"> Instagram
+                        <img src="../assets/img/instagram.png" alt="Instagram"> Instagram
                     </a>
                 </div>
 
                 <div class="icon mb-3" style="margin-left: -23px;">
                     <a href="https://open.spotify.com/artist/3qiHUAX7zY4Qnjx8TNUzVx" target="_blank">
-                        <img src="./img/spotify.png" alt="Spotify"> Spotify
+                        <img src="../assets/img/spotify.png" alt="Spotify"> Spotify
                     </a>
                 </div>
                 <div class="icon" style="margin-left: -10px;">
                     <a href="https://www.youtube.com/@yeatmusic3280/featured" target="_blank">
-                        <img src="./img/youtube.png" alt="YouTube"> YouTube
+                        <img src="../assets/img/youtube.png" alt="YouTube"> YouTube
                     </a>
                 </div>
             </div>
@@ -56,6 +56,9 @@
 
 
 <?php
+
+
+
 $page_name = basename($_SERVER["SCRIPT_NAME"],'.php');
 $page_object = new Page($page_name);
 $page_object->add_scripts();
