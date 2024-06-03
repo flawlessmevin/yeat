@@ -9,25 +9,22 @@ include 'parts/header.php' ?>
 
             $user = new User();
 
-            // Spracovanie údajov z formulára po odoslaní
+
             if (isset($_POST['user_register'])) {
                 $email = $_POST['email'];
                 $password = $_POST['password'];
                 $confirm_password = $_POST['confirm_password'];
-                $nickname = $_POST['nickname']; // Добавили получение никнейма из формы
+                $nickname = $_POST['nickname'];
 
-                // Контроль совпадения паролей
+
                 if ($password === $confirm_password) {
-                    // Вызов метода register() для создания пользователя
-                    if ($user->register($email, $password, $nickname)) { // Добавили передачу никнейма
-                        // Регистрация прошла успешно
+
+                    if ($user->register($email, $password, $nickname)) {
                         echo "<p>Your account created</p>";
                     } else {
-                        // Ошибка при регистрации
                         echo "<p>Registration error</p>";
                     }
                 } else {
-                    // Пароли не совпадают
                     echo "<p>Wrong password</p>";
                 }
             }

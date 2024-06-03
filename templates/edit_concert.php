@@ -5,30 +5,30 @@
 include 'parts/header.php';
 
 
-// Проверяем, есть ли переданный идентификатор концерта
+
 if (!isset($_GET['id'])) {
-    // Если нет, перенаправляем обратно на страницу с концертами
+
     header('Location: admin_tour.php');
     exit;
 }
 
-// Получаем идентификатор концерта из GET-параметров
+
 $concert_id = $_GET['id'];
 
-// Получаем информацию о концерте по его идентификатору
+
 $concert = new Concert();
 $concert_data = $concert->get_concert_by_id($concert_id);
 
-// Проверяем, найден ли концерт с указанным идентификатором
+
 if (!$concert_data) {
-    // Если не найден, перенаправляем обратно на страницу с концертами
+
     header('Location: admin_tour.php');
     exit;
 }
 
-// Обработка отправленной формы
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Получаем данные из формы
+
     $date = $_POST['date'];
     $venue = $_POST['venue'];
     $city = $_POST['city'];
@@ -36,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $tickets = $_POST['tickets'];
     $rsvp = $_POST['rsvp'];
 
-    // Собираем новые данные в массив
+
     $new_data = [
         'date' => $date,
         'venue' => $venue,
@@ -46,10 +46,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         'rsvp' => $rsvp
     ];
 
-    // Обновляем информацию о концерте в базе данных
+
     $concert->update_concert($concert_id, $new_data);
 
-    // Перенаправляем обратно на страницу с концертами после обновления
+
     header('Location: admin_tour.php');
     exit;
 }

@@ -13,7 +13,7 @@ class Banner extends Database
         $stmt->execute([$page_name]);
         $banner = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        // Вывод баннера
+
         if ($banner) {
             ?>
             <div class="image-container">
@@ -24,7 +24,7 @@ class Banner extends Database
             </div>
             <?php
         } else {
-            // Если баннер не найден, выводим сообщение об ошибке
+
             ?>
             <div class="image-container">
                 <img src="../assets/img/banner_error.png" alt="Alternate Banner Image">
@@ -36,5 +36,7 @@ class Banner extends Database
         }
     }
 }
+
+
 
 ?>

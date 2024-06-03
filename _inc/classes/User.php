@@ -19,14 +19,14 @@ class User extends Database{
                 if (password_verify($password, $user['password'])) {
                     // login successful
                     $_SESSION['logged_in'] = true;
-                    // Проверяем роль пользователя, чтобы установить, является ли он администратором
+
                     $_SESSION['is_admin'] = $user['role'] == 1;
                     return true;
                 } else {
-                    error_log("Password verification failed for user: " . $username); // Отладочная информация
+                    error_log("Password verification failed for user: " . $username);
                 }
             } else {
-                error_log("No user found for: " . $username); // Отладочная информация
+                error_log("No user found for: " . $username);
             }
             return false;
         } catch (PDOException $e) {

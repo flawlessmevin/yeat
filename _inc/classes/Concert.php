@@ -64,14 +64,14 @@ class Concert extends Database
         }
     }
 
-    // Получение данных о всех концертах
+
     function select_concerts()
     {
         $query = $this->db->query("SELECT * FROM concerts");
         return $query->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    // Обновление данных концерта
+
     public function update_concert($concert_id, $new_data)
     {
         try {
@@ -93,7 +93,7 @@ class Concert extends Database
         }
     }
 
-    // Удаление концерта
+
     public function delete_concert($id)
     {
         try {

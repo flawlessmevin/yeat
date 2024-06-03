@@ -22,7 +22,7 @@ require('../_inc/functions.php');
 <header class="banner">
     <div class="logo">
         <a href="../index.php">
-            <img src="../img/yeat-twizzy gif.gif" height="40">
+            <img src="../assets/img/yeat-twizzy gif.gif" height="40">
         </a>
     </div>
     <nav class="navigation">
